@@ -1,0 +1,10 @@
+GET https://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy
+
+{
+  "taiKhoan": "dinhcongtri9597@gmai.com",
+  "matKhau": "Wh4tsh!t",
+  "hoTen": "Đinh Công Trí",
+  "soDT": "0923684469",
+  "maNhom": "GP01",
+  "email": "dinhcongtri9597@gmail.com"
+}

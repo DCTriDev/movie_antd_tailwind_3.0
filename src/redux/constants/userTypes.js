@@ -1,0 +1,2 @@
+export const SET_USER_LOCAL = 'SET_USER_LOCAL'
+export const REMOVE_USER_LOCAL = 'REMOVE_USER_LOCAL'

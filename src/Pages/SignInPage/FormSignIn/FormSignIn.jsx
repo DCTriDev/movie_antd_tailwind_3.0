@@ -68,11 +68,11 @@ function FormSignIn() {
                 <Form.Item
                     wrapperCol={{
                         offset: 11,
-                        span: 0,
+                        span: 24,
                     }}
                 >
                     <Button className='bg-green-600 hover:bg-green-800 rounded-lg' type="primary" htmlType="submit">
-                        Submit
+                        Đăng Nhập
                     </Button>
                 </Form.Item>
             </Form>

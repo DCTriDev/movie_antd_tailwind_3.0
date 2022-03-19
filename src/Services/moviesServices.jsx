@@ -13,9 +13,8 @@ const moviesServices = {
     },
     getDetailsMoviesServicesAPI: (values) => {
         return axios({
-            url: `${BASE_URL}/api/QuanLyPhim/LayThongTinPhim`,
+            url: `${BASE_URL}/api/QuanLyPhim/LayThongTinPhim?MaPhim=${values}`,
             method: 'GET',
-            data: values,
             headers: {
                 TokenCybersoft: TOKEN_CYBERSOFT
             }

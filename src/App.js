@@ -4,10 +4,12 @@ import SignInPage from "./Pages/SignInPage/SignInPage";
 import HomePage from "./Pages/HomePage/HomePage";
 import DetailMovies from "./Pages/DetailMovies/DetailMovies";
 import Layout from "./Template/Layout";
+import LoadingAnimation from "./Components/LoadingAnimation/LoadingAnimation";
 
 function App() {
     return (
        <div>
+           <LoadingAnimation/>
            <BrowserRouter>
                <Switch>
                    <Route exact path='/' component={HomePage}/>

@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {getListCinemaAction} from "../../../redux/actions/moviesActions";
 import {Tabs} from 'antd';
+import {setListCinemaAction} from "../../../redux/Slice/movieSlice";
 import ItemMovieTabs from "./ItemMovieTabs";
 
 const {TabPane} = Tabs;
@@ -12,24 +12,25 @@ function callback(key) {
 
 function ListCinemaTabs() {
     const dispatch = useDispatch()
+    let {listCinema} = useSelector(state => state.movieSlice)
+    console.log(listCinema)
 
-    let {listCinema} = useSelector(state => state.moviesReducer)
     useEffect(() => {
-        dispatch(getListCinemaAction())
+        dispatch(setListCinemaAction())
     }, [])
     return (
-        <div className='px-20 my-12'>
-            <Tabs tabBarGutter={0} defaultActiveKey="1" onChange={callback} tabPosition='left'>
+        listCinema ? <div className='px-20 my-12 scroll-custom'>
+            <Tabs style={{height: '70vh'}} tabBarGutter={0} defaultActiveKey="1" onChange={callback} tabPosition='left'>
                 {
-                    listCinema.map((listCinema, index) => {
+                    listCinema?.map((listCinema, index) => {
                         return (
                             <TabPane tab={<div>{<img className='h-14' src={listCinema.logo} alt=""/>}</div>}
                                      key={index}>
-                                <Tabs defaultActiveKey="0" tabPosition='left'>
+                                <Tabs style={{height: '70vh'}} defaultActiveKey="0" tabPosition='left'>
                                     {
                                         listCinema.lstCumRap.map((cinema, index) => {
                                             return (
-                                                <TabPane tab={
+                                                <TabPane style={{height:'70vh'}} tab={
                                                     <div className='w-52 whitespace-normal text-left'>
                                                         <h4 className='text-red-600'>{cinema.tenCumRap}</h4>
                                                         <p>{cinema.diaChi}</p>
@@ -46,7 +47,7 @@ function ListCinemaTabs() {
                     })
                 }
             </Tabs>
-        </div>
+        </div> : <></>
     );
 }
 

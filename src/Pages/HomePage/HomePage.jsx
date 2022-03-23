@@ -1,13 +1,12 @@
 import React from 'react';
 import Navbar from "../../Components/Navbar/Navbar";
-import ListMovies from "./ListMovies/ListMovies";
+import ListMovie from "./ListMovies/ListMovie";
 import ListCinemaTabs from "./ListCinemaTabs/ListCinemaTabs";
 
 function HomePage() {
     return (
         <div>
-            <Navbar/>
-            <ListMovies/>
+            <ListMovie/>
             <ListCinemaTabs/>
         </div>
     );

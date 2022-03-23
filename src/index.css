@@ -19,3 +19,11 @@ button:focus {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply px-4 py-3 transition-all text-white rounded-3xl hover:bg-right duration-500;
+        background-image: linear-gradient(to right, #F55F8D 0, #F8AE56 51%, #F55F8D 100%);;
+        background-size:  200%;
+    }
+}

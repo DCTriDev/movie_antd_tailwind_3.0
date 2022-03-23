@@ -1,12 +1,13 @@
 import React from 'react';
 import {Button, Form, Input, Select} from 'antd';
-import userServices from "../../../Services/userServices";
 import {useHistory} from "react-router-dom";
+import httpService from "../../../Services/http.service";
 
-const { Option } = Select;
+const {Option} = Select;
 
 function FormSignUp() {
     const history = useHistory()
+
     const onFinish = (values) => {
         console.log('Success:', values);
         handleSignUp(values)
@@ -17,15 +18,17 @@ function FormSignUp() {
     };
 
     const handleSignUp = (values) => {
-        userServices.signUpServiceAPI(values)
+        httpService.signup(values)
             .then((res) => {
-                console.log(res.data.content)
-                history.push('/signin')
+                if (res.status === 200) {
+                    history.push('/login')
+                }
             })
             .catch((err) => {
-                console.log(err.response.data.content)
+                console.log(err)
             })
     }
+
     return (
         <div className='bg-white px-12 py-6 rounded-xl'>
             <Form
@@ -120,6 +123,13 @@ function FormSignUp() {
                         <Option value="GP01">GP01</Option>
                         <Option value="GP02">GP02</Option>
                         <Option value="GP03">GP03</Option>
+                        <Option value="GP04">GP04</Option>
+                        <Option value="GP05">GP05</Option>
+                        <Option value="GP06">GP06</Option>
+                        <Option value="GP07">GP07</Option>
+                        <Option value="GP08">GP08</Option>
+                        <Option value="GP09">GP09</Option>
+                        <Option value="GP10">GP10</Option>
                     </Select>
                 </Form.Item>
 

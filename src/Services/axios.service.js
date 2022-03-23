@@ -1,12 +1,13 @@
 import Axios from "axios";
 import store from "../index";
 import {BASE_URL, TOKEN_CYBERSOFT} from "../utils/config";
-import {loadingAnimationEndAction, loadingAnimationStartAction} from "../redux/actions/loadingAnimationActions";
+import {startLoading, stopLoading} from "../redux/Slice/loadingAnimSlice";
 
 class AxiosService {
     axios;
     axiosConfig;
     authService;
+
     constructor(params) {
         this.axios = Axios.create({
             baseURL: this.getBaseUrl(),
@@ -66,11 +67,11 @@ class AxiosService {
     }
 
     handleFlow(method, loading = true) {
-        loading && store.dispatch(loadingAnimationStartAction());
+        loading && store.dispatch(startLoading());
         return new Promise((resolve, reject) => {
             method
                 .then((res) => {
-                    loading && store.dispatch(loadingAnimationEndAction());
+                    loading && store.dispatch(stopLoading());
 
                     resolve({
                         data: res.data,
@@ -79,7 +80,7 @@ class AxiosService {
                     });
                 })
                 .catch((err) => {
-                    loading && store.dispatch(loadingAnimationStartAction());
+                    loading && store.dispatch(startLoading());
 
                     this.handleError(err);
                     reject({

@@ -3,14 +3,13 @@ import moment from "moment";
 
 
 function ItemMovieTabs({data}) {
-    console.log(data.danhSachPhim)
     return (
-        <div className='flex flex-col gap-3'>
+        <div className='flex flex-col gap-3 h-full overflow-y-scroll'>
             {
                 data.danhSachPhim.map((movie, index) => {
                     return (
                         <div key={index} className='h-28 flex gap-3'>
-                            <img className='w-28 h-full object-cover' src={movie.hinhAnh} alt="..."/>
+                            <img className='w-28 h-full object-cover' src={movie?.hinhAnh} alt="..."/>
                             <div className='flex flex-col overflow-y-scroll flex-grow'>
                                 <h4>{movie.tenPhim}</h4>
                                 <div className='flex gap-3 flex-wrap'>

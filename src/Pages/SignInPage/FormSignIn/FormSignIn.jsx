@@ -1,12 +1,12 @@
 import React from 'react';
 import {Button, Form, Input, message} from 'antd';
 import {useDispatch} from "react-redux";
-import {userLoginThunkAction} from "../../../redux/actions/userActions";
+import {userLoginActionThunk} from "../../../redux/Slice/userSlice";
+
 
 function FormSignIn() {
     const dispatch = useDispatch()
     const onFinish = (values) => {
-        console.log(values)
         handleSignIn(values)
     };
 
@@ -15,7 +15,7 @@ function FormSignIn() {
     };
 
     const handleSignIn = (values) => {
-        dispatch(userLoginThunkAction(values, showErr))
+        dispatch(userLoginActionThunk(values))
     }
 
     const showErr = (err) => {

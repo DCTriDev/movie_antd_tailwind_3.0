@@ -1,11 +1,11 @@
 import React from 'react';
 import Navbar from "../Components/Navbar/Navbar";
 
-function Layout({Component, maPhim}) {
+function Layout({Component}) {
     return (
         <div>
             <Navbar/>
-            <Component maPhim={maPhim}/>
+            <Component/>
         </div>
     );
 }

@@ -3,11 +3,12 @@ import SignUpPage from "./Pages/SignUpPage/SignUpPage";
 import SignInPage from "./Pages/SignInPage/SignInPage";
 import HomePage from "./Pages/HomePage/HomePage";
 import Layout from "./Template/Layout";
+import LoadingAnim from "./Components/LoadingAnim/LoadingAnim";
 
 function App() {
     return (
         <div>
-            {/*<LoadingAnimation/>*/}
+            <LoadingAnim/>
             <BrowserRouter>
                 <Switch>
                     <Route exact path='/' render={() => {

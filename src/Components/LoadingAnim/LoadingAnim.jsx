@@ -2,8 +2,9 @@ import React from 'react';
 import { Spin, Space } from 'antd';
 import {useSelector} from "react-redux";
 
-function LoadingAnimation() {
-    let {loading} = useSelector(state => state.loadingAnimateReducer)
+function LoadingAnim() {
+    let loading= useSelector(state => state.loadingAnimSlice.loading);
+    console.log(loading);
     return (
         loading?(
             <div className='w-screen h-screen fixed flex justify-center items-center z-50 bg-black bg-opacity-20'>
@@ -17,4 +18,4 @@ function LoadingAnimation() {
     );
 }
 
-export default LoadingAnimation;
+export default LoadingAnim;

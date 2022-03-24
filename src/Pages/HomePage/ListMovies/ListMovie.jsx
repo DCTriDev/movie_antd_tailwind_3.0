@@ -6,7 +6,7 @@ import ItemMovie from "./ItemMovie";
 function ListMovie() {
     const dispatch = useDispatch()
 
-    let {listMovie} = useSelector(state => state.movieSlice)
+    let listMovie = useSelector(state => state.movieSlice.listMovie)
 
     console.log(listMovie)
     useEffect(() => {

@@ -23,3 +23,8 @@ yarn-debug.log*
 yarn-error.log*
 
 /.idea
+/src/.idea/.gitignore
+/src/.idea/modules.xml
+/src/.idea/src.iml
+/src/.idea/vcs.xml
+/src/video27_dat_ve_phim-20220320T134333Z-001.zip
